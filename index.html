@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset = "UTF-8"/>
+        <meta content = "width=device-width, initial-scale=1.0" name = "viewport"/>
+        <title>Grand Line Chronicles</title>
+        <link href = "./styles.css" rel = "stylesheet">
+    </head>
+    <body>
+        <!-- Navigation Bar -->
+        <header>
+            <nav class = "nav-bar">
+                <div class = "nav-bar-left">
+                    <img alt = "One Piece Logo" height = "40px" src = "./assets/one-piece-logo.png">
+                    <span class = "nav-bar-heading">Grand Line Chronicles</span>
+                </div>
+                
+                <div class = "nav-bar-right">
+                    <a href = "https://onepiece.fandom.com/wiki/One_Piece_Wiki">One Piece Wiki</a>
+                    <a href = "https://one-piece.com/index.html">Official Site</a>
+                </div>
+            </nav>
+        </header>
+        
+        <div class = "content-container">
+            <!-- Sidebar -->
+            <aside class = "sidebar-container">
+                
+                <a href = "javascript:void(0);" id = "secret-logo">
+                    <img alt = "Straw Hat Logo | One Piece" src = "./assets/straw-hat-logo.png">
+                </a>
+                
+                <!-- Pop-up modal with hidden content -->
+                <div class = "popup hidden" id = "popup-modal">
+                    <div class = "popup-content">
+                        <span class = "close-btn">&times;</span>
+                        <p>
+                            You've found the <em>One Piece!</em> Here's a secret about Luffy: <br><br>
+                            <strong>Luffy's dream is not just about becoming Pirate King. What is it? <br> That's a
+                                    mystery
+                                    Oda-sensei has yet to reveal!</strong>
+                        </p>
+                    </div>
+                </div>
+                
+                <audio id = "luffy-laugh" preload = "auto" src = "./assets/luffy-voice.mp3"></audio>
+                
+                <script>
+                    // Get the logo and modal elements
+                    const secretLogo = document.getElementById('secret-logo');
+                    const popupModal = document.getElementById('popup-modal');
+                    const closeBtn = document.querySelector('.close-btn');
+                    const luffyLaugh = document.getElementById('luffy-laugh');
+                    
+                    // Show the modal when the logo is clicked
+                    secretLogo.addEventListener('click', function () {
+                        popupModal.classList.add('show');
+                        luffyLaugh.currentTime = 0;
+                        luffyLaugh.play();
+                    });
+                    
+                    // Close the modal when the close button is clicked
+                    closeBtn.addEventListener('click', function () {
+                        popupModal.classList.remove('show');
+                        luffyLaugh.pause();
+                        
+                    });
+                    
+                    // Optionally, close the modal when clicking outside of it
+                    window.addEventListener('click', function (event) {
+                        if (event.target === popupModal) {
+                            popupModal.classList.remove('show');
+                            luffyLaugh.pause();
+                        }
+                    });
+                </script>
+                
+                <audio autoplay class = "one-piece-ost" controls id = "ost-audio" loop
+                       src = "./assets/one-piece-ost.mp3"
+                       type = "audio/mp3"></audio>
+                
+                <div class = "sidebar-arc-list">
+                    <h2>All the Arcs:</h2>
+                    <ul>
+                        <!-- East Blue Saga -->
+                        <li>East Blue Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Romance_Dawn_Arc">Romance Dawn Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Orange_Town_Arc">Orange Town Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Syrup_Village_Arc">Syrup Village Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Baratie_Arc">Baratie Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Arlong_Park_Arc">Arlong Park Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Loguetown_Arc">Loguetown Arc</a></li>
+                                <li><a href = "./error-404.html">Warship Island Arc (Filler)</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Alabasta Saga -->
+                        <li>Alabasta Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Reverse_Mountain_Arc">Reverse Mountain
+                                                                                                      Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Whisky_Peak_Arc">Whiskey Peak Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Little_Garden_Arc">Little Garden Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Drum_Island_Arc">Drum Island Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Arabasta_Arc">Alabasta Arc</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Sky Island Saga -->
+                        <li>Sky Island Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Jaya_Arc">Jaya Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Skypiea_Arc">Skypiea Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Long_Ring_Long_Land_Arc">Long Ring Long
+                                                                                                         Land
+                                                                                                         Arc</a></li>
+                                <li><a href = "./error-404.html">Ocean's Dream Arc (Filler)</a></li>
+                                <li><a href = "./error-404.html">Foxy's Return Arc (Filler)</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Water 7 Saga -->
+                        <li>Water 7 Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Water_7_Arc">Water 7 Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Enies_Lobby_Arc">Enies Lobby Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Post-Enies_Lobby_Arc">Post-Enies Lobby
+                                                                                                      Arc</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Thriller Bark Saga -->
+                        <li>Thriller Bark Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Thriller_Bark_Arc">Thriller Bark Arc</a>
+                                </li>
+                                <li><a href = "./error-404.html">Spa Island Arc (Filler)</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Summit War Saga -->
+                        <li>Summit War Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Sabaody_Archipelago_Arc">Sabaody
+                                                                                                         Archipelago
+                                                                                                         Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Amazon_Lily_Arc">Amazon Lily Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Impel_Down_Arc">Impel Down Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Marineford_Arc">Marineford Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Post-War_Arc">Post-War Arc</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Fish-Man Island Saga -->
+                        <li>Fish-Man Island Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Return_to_Sabaody_Arc">Return to Sabaody
+                                                                                                       Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Fish-Man_Island_Arc">Fish-Man Island
+                                                                                                     Arc</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Dressrosa Saga -->
+                        <li>Dressrosa Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Punk_Hazard_Arc">Punk Hazard Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Dressrosa_Arc">Dressrosa Arc</a></li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Yonko Saga -->
+                        <li>Yonko Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Zou_Arc">Zou Arc</a></li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Whole_Cake_Island_Arc">Whole Cake Island
+                                                                                                       Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Levely_Arc">Levely (Reverie) Arc</a>
+                                </li>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Wano_Country_Arc">Wano Country Arc</a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                        <!-- Final Saga -->
+                        <li>Final Saga
+                            <ul>
+                                <li><a href = "https://onepiece.fandom.com/wiki/Egghead_Arc">Egghead Island Arc
+                                                                                             (Ongoing)</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Main Content -->
+            <main class = "main-content">
+                <section class = "about-section">
+                    <h2>About One Piece</h2>
+                    <p>
+                        In the boundless seas of imagination, <strong>One Piece</strong> is not merely a story, but an
+                        odyssey—an epic of dreams, courage, and the unyielding spirit of humanity. Created by the
+                        visionary
+                        <strong>Eiichiro Oda</strong>, this world is a vast, living canvas, where every saga adds a new
+                        shade to
+                        the masterpiece. At its core stands <strong>Monkey D. Luffy</strong>, a boy made of rubber, yet
+                        his will
+                        is forged of iron. His dream is not just to uncover the mythical treasure, the <strong>One
+                                                                                                               Piece</strong>,
+                        but to embody the very essence of freedom itself as the <strong>Pirate King</strong>.
+                    </p>
+                    <p>
+                        The ocean, vast and unforgiving, is more than just a setting; it is the stage where destinies
+                        clash,
+                        where the fates of heroes and tyrants alike are carved in the waves. The <strong>Grand
+                                                                                                         Line</strong>,
+                        a
+                        place of chaos and wonder, becomes a metaphor for life's trials—a crucible that tempers only the
+                        bravest. No one sails these seas unscathed, for every storm leaves its mark, yet it is within
+                        the
+                        maelstrom that true freedom is found.
+                    </p>
+                    <p>
+                        Luffy's crew, the <strong>Straw Hat Pirates</strong>, are a collection of broken souls, united
+                        not by
+                        blood, but by shared conviction and unbreakable bonds. <strong>Nami</strong>, who once faced
+                        storms of
+                        her own, now navigates them with grace. <strong>Zoro</strong>, the swordsman bound by honor,
+                        carries the
+                        weight of every promise on his blades. And <strong>Sanji</strong>, whose passion for the beauty
+                        of the
+                        sea is rivaled only by the fierceness of his resolve, fights with heart and fire. Each member
+                        has
+                        suffered, but together they rise, their dreams interwoven in a symphony of rebellion.
+                    </p>
+                    <p>
+                        Yet, the journey is far more than a quest for gold. The oppressive <strong>World
+                                                                                                   Government</strong>,
+                        with its iron grip, looms as the embodiment of control, while the pirates, chaotic and free,
+                        dance on
+                        the edge of lawlessness, their banner one of defiance. <strong>Devil Fruits</strong>, offering
+                        unimaginable powers at the cost of the sea's embrace, are a potent reminder that ambition
+                        demands
+                        sacrifice—power always comes with a price.
+                    </p>
+                    <p>
+                        Across the <strong>Grand Line</strong>, islands rise like characters in their own right—each one
+                        telling
+                        its story. <strong>Alabasta</strong>, a kingdom parched and broken, reflects the cruelty of
+                        power when
+                        life itself—water—is stolen from its people. <strong>Skypiea</strong>, a kingdom in the heavens,
+                        speaks
+                        to the fragility of faith, the brutal clash between belief and reality. <strong>Wano</strong>,
+                        steeped
+                        in tradition and bloodshed, becomes a mirror for the timeless struggle between heritage and
+                        progress.
+                        Every island is a reflection of the broader world, every battle a poetic clash of ideals.
+                    </p>
+                    <p>
+                        And still, through every storm, through every victory and defeat, the dream endures. The journey
+                        itself
+                        becomes the treasure—a journey that asks not just what lies at the end, but who you become along
+                        the
+                        way. Hope blooms even in the wreckage of war, as each island conquered, each foe defeated,
+                        reminds us
+                        that the seas of <strong>One Piece</strong> are not simply a path to riches—they are the very
+                        essence of
+                        the adventure.
+                    </p>
+                    <p>
+                        <strong>One Piece</strong> is more than a tale of pirates—it is a symphony of life, where every
+                                                   note,
+                                                   whether of triumph or despair, resonates with meaning. Luffy's
+                                                   laughter
+                                                   echoes across the seas like a storm of possibility, a reminder to all
+                                                   who
+                                                   dare to dream that no chain is unbreakable, no limit insurmountable.
+                                                   The
+                                                   treasure, in the end, is not merely gold—it is freedom itself, the
+                                                   dream that
+                                                   every soul longs for, a promise that the light on the horizon will
+                                                   never
+                                                   fade, no matter how dark the waters become.
+                    </p>
+                </section>
+                
+                <section class = "character-introductions">
+                    <h2>Know your Straw-hat:</h2>
+                    
+                    <!-- Dropdown Menu -->
+                    <select class = "character-dropdown" id = "characterDropdown">
+                        <option value = "">--Select a Member--</option>
+                        <option value = "luffy">Monkey D. Luffy</option>
+                        <option value = "zoro">Roronoa Zoro</option>
+                        <option value = "nami">Nami</option>
+                        <option value = "usopp">Usopp</option>
+                        <option value = "sanji">Sanji</option>
+                        <option value = "chopper">Tony Tony Chopper</option>
+                        <option value = "robin">Nico Robin</option>
+                        <option value = "franky">Franky</option>
+                        <option value = "brook">Brook</option>
+                        <option value = "jinbei">Jinbei</option>
+                    </select>
+                    
+                    <!-- Container to display the selected character's introduction and image -->
+                    <div class = "character-info" id = "characterInfo" style = "display:none;">
+                        <img alt = "Character Image" id = "characterImage" src = "">
+                        <div>
+                            <h3 id = "characterName"></h3>
+                            <p id = "characterDescription"></p>
+                        </div>
+                    </div>
+                    
+                    <script>
+                        const characterData = {
+                            luffy: {
+                                name: "Monkey D. Luffy",
+                                description: "The captain of the Straw Hat Pirates, Luffy is a joyful and fearless adventurer with the power of the Gum-Gum Fruit, making his body rubbery and elastic. His dream is to become the Pirate King by finding the legendary treasure, the <em>One Piece.</em> Luffy is known for his unwavering determination, loyalty to his friends, and love for freedom. His simple yet profound belief that everyone should live free drives him to challenge powerful forces and fight for what he believes in.",
+                                image: "./assets/luffy.png"
+                            },
+                            zoro: {
+                                name: "Roronoa Zoro",
+                                description: "A master swordsman, Zoro wields three swords in his unique fighting style, <em>Santoryu.</em> He dreams of becoming the world's greatest swordsman to fulfill a promise to a lost friend. Zoro is fiercely loyal to Luffy and acts as his right-hand man. He is stoic, tough, and has a strong sense of honor. His indomitable will allows him to endure incredible pain, making him one of the crew's strongest fighters.",
+                                image: "./assets/zoro.png"
+                            },
+                            nami: {
+                                name: "Nami",
+                                description: "The navigator of the Straw Hat Pirates, Nami is a brilliant cartographer and weather expert. She initially joined the crew with the goal of buying back her home from a pirate tyrant, but after being saved by Luffy, she became a loyal member. Nami dreams of creating a map of the entire world. Though she loves treasure and can be crafty, her sharp intellect and kindness make her indispensable to the crew.",
+                                image: "./assets/nami.png"
+                            },
+                            usopp: {
+                                name: "Usopp",
+                                description: "Usopp is the crew's sniper and a talented inventor. Known for his tall tales and cowardice, Usopp often struggles with bravery but always comes through for his friends in the end. His dream is to become a brave warrior of the sea, like his father. Though he lacks the raw power of other members, his creativity, courage in key moments, and determination have earned him respect from his crewmates.",
+                                image: "./assets/usopp.png"
+                            },
+                            sanji: {
+                                name: "Sanji",
+                                description: "The Straw Hat Pirates' cook, Sanji is as skilled with his feet in combat as he is in the kitchen. His kicks are deadly, and his culinary skills are unmatched. Sanji dreams of finding the All Blue, a legendary sea where fish from every ocean gather. A chivalrous gentleman, Sanji has a strong sense of respect for women and is known for his flirtatious nature. His loyalty to the crew and dedication to protecting his friends run deep.",
+                                image: "./assets/sanji.png"
+                            },
+                            chopper: {
+                                name: "Tony Tony Chopper",
+                                description: "Chopper is the crew's doctor and a reindeer who ate the Human-Human Fruit, allowing him to speak and transform into different human-reindeer hybrid forms. Though often mistaken for a pet due to his small, cute appearance, Chopper is a highly skilled physician. His dream is to find a cure for every disease. Chopper is kind-hearted, naïve, and a bit shy, but he will always step up when his friends are in need.",
+                                image: "./assets/chopper.png"
+                            },
+                            robin: {
+                                name: "Nico Robin",
+                                description: "Robin is an archaeologist and the crew's scholar. She possesses the powers of the Flower-Flower Fruit, which allows her to sprout extra limbs from any surface. Her calm, mature demeanor hides a dark past, as she was hunted for her ability to read the ancient Poneglyphs, which can reveal the history of the world. Robin dreams of uncovering the true history and has become a valuable asset to the crew's larger mission.",
+                                image: "./assets/robin.png"
+                            },
+                            franky: {
+                                name: "Franky",
+                                description: "Franky is a cyborg and the shipwright of the Straw Hat Pirates. After modifying his own body with various mechanical enhancements, he became a powerhouse fighter who dreams of building the greatest ship in the world, one that will sail to the ends of the earth. Franky is eccentric, loud, and proud, but beneath his brash exterior is a compassionate and protective crewmate.",
+                                image: "./assets/franky.png"
+                            },
+                            brook: {
+                                name: "Brook",
+                                description: "Brook is the crew's musician and a living skeleton, brought back to life by the powers of the Revive-Revive Fruit. His light-hearted personality, love for music, and penchant for terrible jokes add charm to his otherwise eerie appearance. Despite his carefree attitude, Brook is a skilled swordsman and cares deeply for his crew. His dream is to reunite with Laboon, a whale he befriended before his death.",
+                                image: "./assets/brook.png"
+                            },
+                            jinbei: {
+                                name: "Jinbei",
+                                description: "Jinbe is a Fish-Man and a master of Fish-Man Karate, known for his calm wisdom and strong sense of justice. As a former Warlord of the Sea, he is one of the crew's most powerful fighters. Jinbe's dream is to achieve peaceful coexistence between humans and Fish-Men. His loyalty to Luffy and the crew stems from his deep respect for their ideals and courage.",
+                                image: "./assets/jinbe.png"
+                            }
+                        };
+                        
+                        const dropdown = document.getElementById("characterDropdown");
+                        const characterInfoDiv = document.getElementById("characterInfo");
+                        const characterImage = document.getElementById("characterImage");
+                        const characterName = document.getElementById("characterName");
+                        const characterDescription = document.getElementById("characterDescription");
+                        
+                        dropdown.addEventListener("change", function () {
+                            const selectedCharacter = this.value;
+                            
+                            if (selectedCharacter && characterData[selectedCharacter]) {
+                                const character = characterData[selectedCharacter];
+                                
+                                // Update the content and image
+                                characterImage.src = character.image; // Update the image source
+                                characterImage.alt = character.name + " Image"; // Update the alt text for the image
+                                characterName.textContent = character.name;
+                                characterDescription.innerHTML = character.description;
+                                
+                                // Show the container
+                                characterInfoDiv.style.display = "flex";
+                            } else {
+                                characterInfoDiv.style.display = "none"; // Hide if no character is selected
+                            }
+                        });
+                    </script>
+                </section>
+                
+                <section class = "amv-section">
+                    <h2>Fanmade AMV</h2>
+                    
+                    <!-- The video player -->
+                    <video class = "video-player" controls id = "amv-video">
+                        <source src = "./assets/one-piece-monster-trio.mp4" type = "video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <script>
+                        const videoPlayer = document.getElementById('amv-video');
+                        const ostAudio = document.getElementById('ost-audio');
+                        
+                        videoPlayer.addEventListener('play', () => {
+                            ostAudio.volume = 0.1; // Reduce the OST volume when video plays
+                        });
+                        
+                        videoPlayer.addEventListener('pause', () => {
+                            ostAudio.volume = 1; // Restore full volume when video is paused or ended
+                        });
+                        
+                        videoPlayer.addEventListener('ended', () => {
+                            ostAudio.volume = 1; // Reset volume when the video ends
+                        });
+                    </script>
+                </section>
+            </main>
+        </div>
+        
+        <!-- Footer -->
+        <footer class = "site-footer">
+            <div class = "footer-content">
+                <p>© 2024 Grand Line Chronicles. All rights reserved.</p>
+                <p>Disclaimer: The audio and video content on this site are not my property, and I do not claim
+                   ownership. All
+                   rights belong to the respective creators.</p>
+                <p>Designed with passion for One Piece by <a href = "http://github.com/suswagatam-rong">Suswagatam
+                                                                                                        Rong.</a></p>
+            </div>
+        </footer>
+    </body>
+</html>

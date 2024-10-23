@@ -1,0 +1,347 @@
+/* ! -------------------------- Body Styles --------------------------------*/
+
+body {
+	background-color: #D5CECA;
+}
+
+.content-container {
+	display: flex;
+	width: 100%; /* Ensure container takes full width */
+}
+
+/* ! -------------------------- Navigation Bar Styles --------------------------------*/
+
+.nav-bar {
+	font-family: 'Arial', sans-serif;
+	padding: 20px 20px;
+	background-color: #2E2951;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar-left {
+	display: flex;
+	align-items: center;
+}
+
+.nav-bar-left img {
+	padding-left: 20px;
+	margin-right: 15px;
+	height: 40px;
+}
+
+.nav-bar-heading {
+	font-size: 1.8em;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.nav-bar-right {
+	display: flex;
+	align-items: center;
+}
+
+.nav-bar-right a {
+	margin-left: 10px;
+	margin-right: 20px;
+	text-decoration: none;
+	font-size: 1em;
+	color: #333;
+	line-height: 1;
+	padding: 0;
+	height: 40px; /* Match the height of the image and ensure alignment */
+	display: flex;
+	align-items: center;
+}
+
+.nav-bar-heading, .nav-bar-right a {
+	color: #D9D9D9;
+}
+
+.nav-bar-right a:hover {
+	color: #81608A;
+}
+
+/* ! -------------------------- Sidebar Styles --------------------------------*/
+
+.sidebar-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #233D53;
+	width: 25%;
+	margin-top: 10px;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	font-family: 'Arial', sans-serif;
+	color: #D9D9D9;
+}
+
+/* Pop-up Modal Styling */
+#popup-modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 300px;
+	background-color: #233D53;
+	color: #F9F3E6;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	text-align: center;
+}
+
+.popup-content {
+	color: #F9F3E6;
+	font-family: 'Arial', sans-serif;
+}
+
+.close-btn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #F9F3E6;
+	cursor: pointer;
+}
+
+#popup-modal.show {
+	display: block;
+}
+
+#popup-modal.show::before {
+	content: "";
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: -1;
+}
+
+.sidebar-container img {
+	height: 200px;
+	margin-bottom: 40px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+
+.sidebar-arc-list h2 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+	text-align: center;
+	color: #F9F3E6;
+}
+
+.sidebar-arc-list ul {
+	list-style-type: none;
+	padding: 0;
+	width: 100%;
+}
+
+.sidebar-arc-list ul li {
+	margin-bottom: 10px;
+	font-size: 1em;
+	font-weight: bold;
+	color: #F9F3E6;
+}
+
+.sidebar-arc-list ul li ul {
+	margin-top: 5px;
+	padding-left: 20px; /* Indent nested arcs */
+}
+
+.sidebar-arc-list ul li ul li {
+	font-size: 1em;
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+.sidebar-arc-list a {
+	text-decoration: none;
+	color: #F9F3E6;
+	font-size: 1.1em;
+	padding: 5px 10px;
+	display: inline-block;
+	border-radius: 5px;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-arc-list a:hover {
+	background-color: #F9F3E6;
+	color: #1B1A1A;
+}
+
+.sidebar-arc-list ul li ul li::before {
+	content: "•"; /* Adds bullet point to arc names */
+	color: #F9F3E6;
+	padding-right: 5px;
+}
+
+.one-piece-ost {
+	width: 100%;
+	max-width: 300px;
+	background-color: #f9f3e6;
+	border: 2px solid #233D53;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+audio::-webkit-media-controls-panel {
+	background-color: #f9f3e6;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+	color: #233D53;
+}
+
+/* ! -------------------------- Main Content Styles --------------------------------*/
+
+.main-content {
+	width: 75%;
+	background-color: #2e3347;
+	display: flex;
+	flex-direction: column; /* Stack sections vertically */
+	margin-top: 10px;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	font-family: 'Arial', sans-serif;
+	color: #D9D9D9;
+	margin-left: 10px;
+	text-align: justify;
+	padding: 20px 30px;
+}
+
+.about-section h2, .character-introductions h2, .character-introductions h3 {
+	color: #f9f7ee;
+}
+
+
+.about-section, .character-introductions {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.character-info {
+	margin-top: 20px;
+	padding: 20px;
+	background-color: #f9f3e6;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: flex;
+	align-items: center;
+	color: #233D53;
+}
+
+.character-info img {
+	width: 150px;
+	height: auto;
+	border-radius: 10px;
+	margin: 20px;
+}
+
+.character-info div {
+	max-width: 700px;
+}
+
+.character-info h3 {
+	margin-top: 0;
+	color: #233D53;
+	margin-left: 80px;
+}
+
+.character-info p {
+	margin-left: 80px;
+	text-align: justify;
+	
+}
+
+.character-dropdown {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #f9f3e6;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	display: inline-block;
+	color: #233D53;
+	width: 100%;
+	max-width: 300px;
+	font-size: 16px;
+	font-family: 'Arial', sans-serif;
+	appearance: none;
+	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23233D53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-size: 15px;
+	cursor: pointer;
+}
+
+.character-dropdown:hover,
+.character-dropdown:focus {
+	border-color: #b6a57a;
+	background-color: #f1e7d3;
+	outline: none;
+}
+
+option {
+	color: #233D53;
+	padding: 10px;
+}
+
+.amv-section {
+	margin: 20px 0;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.video-player {
+	width: 80%;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	outline: none;
+	margin-top: 10px;
+}
+
+/* ! -------------------------- Footer Styles --------------------------------*/
+
+.site-footer {
+	background-color: #2E2951;
+	color: #D9D9D9;
+	text-align: center;
+	padding: 20px;
+	font-family: 'Arial', sans-serif;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+	margin-top: 10px;
+}
+
+.site-footer .footer-content p {
+	margin: 10px 0;
+	font-size: 0.9em;
+	color: #F9F3E6;
+}
+
+.site-footer a {
+	color: #81608A;
+	text-decoration: none;
+}
+
+.site-footer a:hover {
+	text-decoration: underline;
+}
+
+
+
